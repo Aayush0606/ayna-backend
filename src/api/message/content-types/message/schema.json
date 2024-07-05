@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "chat_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chat.chat",
+      "inversedBy": "messages"
+    },
+    "user": {
+      "type": "string",
+      "required": true
+    },
+    "timestamp": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
